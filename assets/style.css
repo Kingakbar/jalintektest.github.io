@@ -33,6 +33,12 @@
     font-size: 1.5rem;
     font-weight: 700;
 }
+@media (max-width: 768px) {
+  .navbar {
+    background: rgba(75, 74, 239, 0.95) !important;
+    backdrop-filter: blur(10px); /* opsional, bikin agak mewah */
+  }
+}
 
 .nav-link {
     font-weight: 500;
@@ -1798,11 +1804,11 @@ section {
             -webkit-mask: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
         }
 
-        .portfolio-track {
-            display: flex;
-            gap: 30px;
-            animation: scroll-horizontal 40s linear infinite;
-            will-change: transform;
+     .portfolio-track {
+        display: flex;
+        gap: 30px;
+        animation: scroll-horizontal 20s linear infinite;
+        will-change: transform;
         }
 
         .portfolio-track:hover {
@@ -1834,9 +1840,11 @@ section {
 
         
 
-        .portfolio-image {
+       .portfolio-image img {
             width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         @keyframes fade-in-out {
@@ -1892,3 +1900,272 @@ section {
                 height: 140px;
             }
         }
+
+
+
+        .hero-section {
+            padding: 60px 0 40px;
+        }
+        
+       .badge-custom {
+            background-color: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .hero-title {
+            color: white;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        
+        .pricing-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-popular {
+            position: relative;
+            border: 3px solid #667eea !important;
+            z-index: 10;
+            overflow: visible; /* biar badge nggak terpotong */
+        }
+
+        
+        .popular-badge {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 20;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Desktop: Card popular sedikit lebih besar */
+        @media (min-width: 992px) {
+            .card-popular {
+                transform: scale(1.05);
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #dc3545;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 15;
+            
+        }
+        
+        .package-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .package-desc {
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+        
+        .price-display {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .price-currency {
+            font-size: 1rem;
+            color: #6c757d;
+            font-weight: 600;
+        }
+        
+        .price-bonus {
+            color: #667eea;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        .btn-select {
+            border-radius: 12px;
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #667eea;
+            color: #667eea;
+            background: transparent;
+        }
+        
+        .btn-select:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-select-popular {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+        }
+        
+        .btn-select-popular:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #495057;
+        }
+        
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            color: #667eea;
+        }
+        
+        .camera-count {
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .bonus-section {
+            border-top: 1px solid #e9ecef;
+            padding-top: 20px;
+            margin-top: 25px;
+        }
+        
+        .bonus-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .bonus-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #495057;
+        }
+        
+        .bonus-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+            color: #28a745;
+        }
+        
+        .highlight-free {
+            color: #dc3545;
+            font-weight: 600;
+        }
+        
+        .highlight-warranty {
+            color: #28a745;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 991.98px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .card-popular {
+                transform: none;
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+            .popular-badge {
+                top: -15px;
+                font-size: 11px;
+                padding: 8px 20px;
+            }
+            .discount-badge {
+                top: 15px;
+                right: 15px;
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 40px 0 30px;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .price-display {
+                font-size: 1.8rem;
+            }
+            .package-title {
+                font-size: 1.3rem;
+            }
+            .pricing-card {
+                margin-bottom: 25px;
+            }
+            .popular-badge {
+                font-size: 10px;
+                padding: 6px 15px;
+                top: -12px;
+            }
+            .discount-badge {
+                top: 12px;
+                right: 12px;
+                font-size: 10px;
+                padding: 5px 10px;
+            }
+        }        

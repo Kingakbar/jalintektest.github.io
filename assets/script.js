@@ -221,25 +221,24 @@ document.addEventListener("DOMContentLoaded", function () {
     showPage(currentPage);
 });
 
- function changeSpeed(duration) {
-            const track = document.getElementById('portfolioTrack');
-            const buttons = document.querySelectorAll('.speed-btn');
-            
-            // Remove active class from all buttons
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
-            
-            // Update animation duration
-            track.style.animationDuration = duration + 's';
-        }
+const track = document.getElementById('portfolioTrack');
 
-        // Optional: Add click handlers for portfolio items
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const title = this.querySelector('.portfolio-title').textContent;
-                alert('Opening: ' + title);
-                // You can replace this with actual navigation or modal opening
-            });
-        });
+// --- Duplikasi otomatis supaya scroll mulus ---
+track.innerHTML += track.innerHTML; // gandakan semua item
+
+// --- Set speed default ---
+track.style.animationDuration = '10s'; // normal speed
+
+// --- Fungsi untuk mempercepat animasi sedikit ---
+function speedUp() {
+  let currentDuration = parseFloat(getComputedStyle(track).animationDuration);
+  let newDuration = currentDuration - 3; // percepat 3 detik
+  if (newDuration < 1) newDuration = 1; // minimal 1 detik biar gak terlalu cepat
+  track.style.animationDuration = newDuration + 's';
+  console.log('Speed up! New duration:', newDuration);
+}
+
+// --- Jalankan langsung saat halaman load ---
+speedUp();
+
+
